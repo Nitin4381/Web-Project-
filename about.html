@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About - Game Hub</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://wallpapercave.com/wp/wp5128415.jpg') no-repeat center center/cover;
+      color: #fff;
+    }
+
+    .navigation {
+      background-color: rgba(0, 0, 0, 0.85);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-item {
+      color: #00ffe1;
+      margin-left: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .nav-item:hover {
+      color: #ff00cc;
+    }
+
+    .about-container {
+      max-width: 900px;
+      margin: 4rem auto;
+      background-color: rgba(0, 0, 0, 0.75);
+      padding: 2.5rem;
+      border-radius: 16px;
+      box-shadow: 0 0 20px #00ffe1;
+    }
+
+    .about-container h1 {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      color: #00ffe1;
+    }
+
+    .about-container p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 1.2rem;
+    }
+
+    .creators {
+      margin-top: 3rem;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1.5rem;
+      border-left: 5px solid #00ffe1;
+      border-radius: 12px;
+    }
+
+    .creators h2 {
+      color: #00ffe1;
+      margin-bottom: 1rem;
+    }
+
+    .creators p {
+      font-size: 1.1rem;
+      color: #e0e0e0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navigation">
+    <div class="nav-item" onclick="location.href='index.html'">HOME</div>
+    <div class="nav-item" onclick="location.href='categories.html'">CATEGORY</div>
+    <div class="nav-item" onclick="location.href='about.html'">ABOUT</div>
+  </nav>
+
+  <!-- About Section -->
+  <div class="about-container">
+    <h1>About Game Hub</h1>
+    <p>
+      <strong>Game Hub</strong> is your one-stop destination for discovering and exploring the world’s most thrilling video games. Whether you're into FPS, open-world adventures, survival horror, or racing, we've curated an ever-expanding collection just for gamers like you.
+    </p>
+    <p>
+      Our platform brings together detailed showcases, high-quality game visuals, and a community-driven experience to help you choose your next adventure wisely. From classics like <em>GTA V</em> and <em>Minecraft</em> to trending titles like <em>Pal World</em> and <em>Assassin’s Creed Shadows</em>, we cover it all!
+    </p>
+    <p>
+      At Game Hub, we believe gaming is more than just entertainment — it's a lifestyle, a community, and a passion. Join us, explore new worlds, and level up your experience.
+    </p>
+
+    <!-- Creators Section -->
+    <div class="creators">
+      <h2>Meet the Creators</h2>
+      <p>
+        This website was created by <strong>Nitin Dwivedi</strong> and <strong>Rohit Sharma</strong>, students of <strong>IIIT Sonepat</strong>, CSE-A Branch. Their love for gaming and web development led to the creation of Game Hub — a platform for gamers, by gamers.
+      </p>
+    </div>
+  </div>
+
+</body>
+</html>

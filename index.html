@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Game Hub - Home</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    function toggleLoginModal() {
+      const modal = document.getElementById("loginModal");
+      modal.style.display = modal.style.display === "flex" ? "none" : "flex";
+    }
+  
+    function handleLogin() {
+      const username = document.getElementById("usernameInput").value;
+      const password = document.getElementById("passwordInput").value;
+  
+      if (!username || !password) {
+        alert("Please fill in both fields");
+        return;
+      }
+  
+      localStorage.setItem("gameUser", username);
+      updateLoginUI();
+      toggleLoginModal();
+    }
+  
+    function handleLogout() {
+      localStorage.removeItem("gameUser");
+      updateLoginUI();
+    }
+  
+    function updateLoginUI() {
+      const user = localStorage.getItem("gameUser");
+      const loginArea = document.getElementById("loginArea");
+  
+      if (user) {
+        loginArea.innerHTML = `
+          <span style="margin-right: 10px; color: #fff;">Hi, ${user}</span>
+          <button class="login-btn" onclick="handleLogout()">Logout</button>
+        `;
+      } else {
+        loginArea.innerHTML = `
+          <button class="login-btn" onclick="toggleLoginModal()">Login</button>
+        `;
+      }
+    }
+  
+    // On page load
+    window.onload = updateLoginUI;
+  </script>
+  
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navigation">
+    <a href="index.html"><div class="nav-item">HOME</div></a>
+    <div class="nav-item">
+      CATEGORY
+      <div class="dropdown-content">
+        <div onclick="filterCategory('action')">Action</div>
+        <div onclick="filterCategory('simulation')">Simulation</div>
+        <div onclick="filterCategory('racing')">Racing</div>
+        <div onclick="filterCategory('horror')">Horror</div>
+        <div onclick="filterCategory('adventure')">Adventure</div>
+        <div onclick="filterCategory('shooting')">Shooting</div>
+        <div onclick="filterCategory('all')">Show All</div>
+      </div>
+    </div>
+    
+  
+    <a href="about.html"><div class="nav-item">ABOUT</div></a>
+    <div class="nav-item" id="loginArea">
+      <button class="login-btn" onclick="toggleLoginModal()">Login</button>
+    </div>
+  </nav>
+  
+    
+
+<!-- Login Modal -->
+<div class="login-modal" id="loginModal">
+  <div class="login-box">
+    <span class="close-btn" onclick="toggleLoginModal()">&times;</span>
+    <h2>Login to Game Hub</h2>
+    <input type="text" id="usernameInput" placeholder="Enter your name" />
+    <input type="password" id="passwordInput" placeholder="Enter password" />
+    <button onclick="handleLogin()">Login</button>
+  </div>
+</div>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <h1>EXPLORE and EXPERIENCE</h1>
+  </header>
+
+  <!-- Games Grid -->
+  <section class="games">
+    <a href="ct2.html"><div class="game-card action shooting">
+      <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/730/header.jpg?t=1683566799" alt="Counter Strike 2">
+      <h2>Counter Strike 2</h2>
+    </div></a>
+    <a href="valorant.html"><div class="game-card action shooting">
+      <img src="https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/d0db663bf28844dcbd744935cdd8c71083e0031c-5600x3150.jpg" alt="Valorant">
+      <h2>Valorant</h2>
+    </div></a>
+    <a href="pubg.html"><div class="game-card action shooting" >
+      <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/578080/header.jpg?t=1709758024" alt="PUBG">
+      <h2>PUBG Battleground</h2>
+    </div></a>
+    <a href="apex.html"><div class="game-card action shooting adventure">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwxVipZSuToKe_E1WwQgHzEKL8rQacucxmtg&s" alt="Apex Legends" alt="Apex Legends">
+      <h2>Apex Legends</h2>
+    </div></a>
+    <a href="minecraft.html"><div class="game-card adventure simulation ">
+      <img src="https://w0.peakpx.com/wallpaper/105/594/HD-wallpaper-video-game-minecraft.jpg" alt="Minecraft">
+      <h2>Minecraft</h2>
+    </div></a>
+    <a href="gta5.html"><div class="game-card simulation racing">
+      <img src="https://cdn.akamai.steamstatic.com/steam/apps/271590/header.jpg?t=1680122737" alt="GTA V">
+      <h2>GTA V</h2>
+    </div></a>
+    <a href="vrising.html"><div class="game-card simulation">
+      <img src="https://cdn.akamai.steamstatic.com/steam/apps/1604030/header.jpg?t=1710852799" alt="V Rising">
+      <h2>V Rising</h2>
+    </div></a>
+    <a href="forza.html"><div class="game-card racing">
+      <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1551360/header.jpg?t=1709758024" alt="Forza Horizon">
+      <h2>Forza Horizon 5</h2>
+      
+    </div></a>
+    <a href="cod.html"><div class="game-card action shooting">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPWEOwwb_IOc0SJvWrrfO8ZvnjfMQwBeUWOg&s" alt="COD">
+      <h2>Call of duty</h2>
+      
+    </div></a>
+    <a href="rdr2.html"><div class="game-card action adventure">
+      <img src="https://cdn1.epicgames.com/b30b6d1b4dfd4dcc93b5490be5e094e5/offer/RDR2476298253_Epic_Games_Wishlist_RDR2_2560x1440_V01-2560x1440-2a9ebe1f7ee202102555be202d5632ec.jpg" alt="RDR2">
+      <h2>Red Dead Redemption 2</h2>
+      
+    </div></a>
+    <a href="re4.html"><div class="game-card action simulation shooting ">
+      <img src="https://image.api.playstation.com/vulcan/ap/rnd/202210/0706/EVWyZD63pahuh95eKloFaJuC.png" alt="RE4">
+      <h2>Resident Evil 4</h2>
+      
+    </div></a>
+    <a href="rb.html"><div class="game-card adventure simulation">
+      <img src="https://images.indianexpress.com/2024/02/Roblox.jpg" alt="Rb">
+      <h2>Roblox
+      </h2>
+      
+    </div></a>
+    <a href="PBP.html"><div class="game-card simulation adventure">
+      <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1623730/c961ac047294838bfe382bf193ade5c64b19e573/capsule_616x353.jpg?t=1745898236" alt="PL">
+      <h2>Pal World</h2>
+      
+    </div></a>
+    <a href="PHB.html"><div class="game-card horror">
+      <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/739630/capsule_616x353.jpg?t=1740090955" alt="PBP">
+      <h2>Phasmophobia</h2>
+      
+    </div></a>
+    <a href="uncharted.html"><div class="game-card adventure ">
+      <img src="https://image.api.playstation.com/vulcan/img/rnd/202010/3018/LcjGnxcTuY4eYoGZyf72uOzI.png" alt="uncharted">
+      <h2>Uncharted</h2>
+      </div></a>
+      <a href="cfc.html"><div class="game-card simulation racing">
+        <img src="https://i.ytimg.com/vi/1d9n6b7kUvU/maxresdefault.jpg" alt="cfs">
+        <h2>Car For Sale</h2>
+      
+    </div></a>
+    <a href="tlu.html"><div class="game-card action adventure horror">
+      <img src="https://c4.wallpaperflare.com/wallpaper/364/113/262/the-last-of-us-poster-game-wallpaper-preview.jpg" alt="Last of us">
+      <h2>The Last of Us</h2>
+    
+  </div></a>
+  <a href="ACS.html"><div class="game-card action">
+    <img src="https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1Bl8P8.img?w=1200&h=687&m=4&q=94" alt="Assassasins creed">
+    <h2>Assassin's Creed Shadows</h2>
+  
+</div></a>
+  </section>
+
+  <!-- Feedback Form -->
+  <section class="feedback">
+    <h2>Provide Experience for the Recommendations</h2>
+    <textarea name="feedback" rows="6" placeholder="Enter your feedback here..."></textarea>
+    <br />
+    <button class="submit-btn">Submit</button>
+  </section>
+  <script>
+    function filterCategory(category) {
+      const cards = document.querySelectorAll('.game-card');
+      cards.forEach(card => {
+        if (category === 'all') {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.toggle('hidden', !card.classList.contains(category));
+        }
+      });
+    }
+  </script>
+</body>
+</html>

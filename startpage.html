@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome to Game Hub</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body, html {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .intro-container {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: white;
+      text-shadow: 2px 2px 10px #000;
+      background-color: rgba(0, 0, 0, 0.4); /* optional overlay */
+    }
+
+    .welcome-text {
+      font-size: 3.5rem;
+      font-weight: bold;
+      opacity: 0;
+      animation: fadeIn 2s ease-in forwards;
+    }
+
+    .quote {
+      font-size: 1.5rem;
+      margin-top: 20px;
+      max-width: 80%;
+      text-align: center;
+      opacity: 0;
+      animation: fadeIn 3s ease-in forwards;
+      animation-delay: 1s;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    .enter-btn {
+      margin-top: 40px;
+      padding: 15px 40px;
+      font-size: 1.2rem;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.6);
+      border: 2px solid white;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      opacity: 0;
+      animation: fadeIn 3s ease-in forwards;
+      animation-delay: 2s;
+    }
+
+    .enter-btn:hover {
+      background-color: white;
+      color: black;
+      transform: scale(1.05);
+    }
+
+    .creators {
+      position: absolute;
+      bottom: 15px;
+      width: 100%;
+      text-align: center;
+      color: #ccc;
+      font-size: 1rem;
+      opacity: 0;
+      animation: fadeIn 4s ease-in forwards;
+      animation-delay: 2.5s;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Video -->
+  <video autoplay muted loop class="video-background">
+    <source src="https://cdn.cloudflare.steamstatic.com/steam/apps/256871068/movie480_vp9.webm" type="video/webm">
+    Your browser does not support the video tag.
+  </video>
+  
+
+  <!-- Intro Content -->
+  <div class="intro-container">
+    <div class="welcome-text">Welcome to Game Hub</div>
+    <div class="quote">"Gear up, level up, and conquer the game world!"</div>
+    <button class="enter-btn" onclick="window.location.href='index.html'">Enter</button>
+  </div>
+
+  <!-- Creators -->
+  <div class="creators">
+    Created by Nitin Dwivedi & Rohit Sharma
+  </div>
+
+</body>
+</html>
