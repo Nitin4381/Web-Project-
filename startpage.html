@@ -48,6 +48,11 @@
   
     // On page load
     window.onload = updateLoginUI;
+    document.getElementClassName("racing").addEventListener("mouseover", function () {
+  const sound = document.getElementById("carsound");
+  sound.currentTime = 0; // rewind to start
+  sound.play();
+});
   </script>
   
 </head>
@@ -126,6 +131,7 @@
     <a href="forza.html"><div class="game-card racing">
       <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1551360/header.jpg?t=1709758024" alt="Forza Horizon">
       <h2>Forza Horizon 5</h2>
+      <audio id="carsound" src="carsound.mp3" preload="auto"></audio>
       
     </div></a>
     <a href="cod.html"><div class="game-card action shooting">
