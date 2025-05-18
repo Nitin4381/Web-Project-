@@ -202,39 +202,36 @@
     }
 
     window.onload = function () {
-      updateLoginUI();
+  updateLoginUI();
 
-      const games = document.querySelectorAll(".racing");
-      const sound = document.getElementById("carsound");
-       const games1 = document.querySelectorAll(".shooting");
-      const sound1 = document.getElementById("gunsound");
-      
+  const games = document.querySelectorAll(".racing");
+  const sound = document.getElementById("carsound");
+  const games1 = document.querySelectorAll(".shooting");
+  const sound1 = document.getElementById("gunsound");
 
-      games.forEach((game) => {
-        game.addEventListener("mouseover", () => {
-          sound.currentTime = 0;
-          sound.play();
-          
-        });
-         games.addEventListener("mouseleave", () => {
-    sound.pause();
-    sound.currentTime = 0; 
+  games.forEach((game) => {
+    game.addEventListener("mouseover", () => {
+      sound.currentTime = 0;
+      sound.play();
+    });
+    game.addEventListener("mouseleave", () => {
+      sound.pause();
+      sound.currentTime = 0;
+    });
   });
-      });
-        
-        
-      games1.forEach((game) => {
-        game.addEventListener("mouseover", () => {
-          sound1.currentTime = 0;
-          sound1.play();
-          
-        });
-        games1.addEventListener("mouseleave", () => {
-    sound1.pause();
-    sound1.currentTime = 0; 
+
+  games1.forEach((game) => {
+    game.addEventListener("mouseover", () => {
+      sound1.currentTime = 0;
+      sound1.play();
+    });
+    game.addEventListener("mouseleave", () => {
+      sound1.pause();
+      sound1.currentTime = 0;
+    });
   });
-      });
-      
+};
+
 
   </script>
 </body>
