@@ -46,15 +46,16 @@
 
   <!-- 🔊 SOUND ELEMENT -->
   <audio id="carsound" src="carsound.mp3" preload="auto"></audio>
+   <audio id="gunsound" src="gunsound.mp3" preload="auto"></audio>
 
   <!-- Games Grid -->
   <section class="games">
-    <a href="ct2.html"><div class="game-card action shooting">
+    <a href="ct2.html"><div class="game-card action shooting onlyshooting">
       <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/730/header.jpg?t=1683566799" alt="Counter Strike 2">
       <h2>Counter Strike 2</h2>
     </div></a>
     
-    <a href="valorant.html"><div class="game-card action shooting">
+    <a href="valorant.html"><div class="game-card action shooting onlyshooting">
       <img src="https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/d0db663bf28844dcbd744935cdd8c71083e0031c-5600x3150.jpg" alt="Valorant">
       <h2>Valorant</h2>
     </div></a>
@@ -205,13 +206,22 @@
 
       const games = document.querySelectorAll(".racing");
       const sound = document.getElementById("carsound");
+       const games1 = document.querySelectorAll(".shooting");
+      const sound1 = document.getElementById("gunsound");
+      
 
       games.forEach((game) => {
         game.addEventListener("mouseover", () => {
           sound.currentTime = 0;
           sound.play();
+          
         });
+        div.addEventListener("mouseleave", () => {
+    sound.pause();
+    sound.currentTime = 0; 
+  });
       });
+      
     };
   </script>
 </body>
