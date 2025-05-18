@@ -216,13 +216,26 @@
           sound.play();
           
         });
-        div.addEventListener("mouseleave", () => {
+         games.addEventListener("mouseleave", () => {
     sound.pause();
     sound.currentTime = 0; 
   });
       });
+        
+        
+      games1.forEach((game) => {
+        game.addEventListener("mouseover", () => {
+          sound1.currentTime = 0;
+          sound1.play();
+          
+        });
+        games1.addEventListener("mouseleave", () => {
+    sound1.pause();
+    sound1.currentTime = 0; 
+  });
+      });
       
-    };
+
   </script>
 </body>
 </html>
